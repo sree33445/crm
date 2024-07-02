@@ -20,8 +20,8 @@ export default function Login() {
       <div className="bg-gradient-to-r from-[#F28383] from-10% via-[#9D6CD2] via-30% to-[#481EDC] to-90% flex items-center justify-center h-screen">
         <div className="max-w-[960px] bg-black-dark grid grid-cols-2 items-center gap-20 p-5 rounded-2xl">
           <div>
-            <img src="/assets/1.svg" alt="" />
-            <img src="/assets/2.svg" alt="" className="absolute top-36" />
+            <img src="../assets/1.svg" alt="" />
+            <img src="../assets/2..svg" alt="" className="absolute top-36" />
           </div>
 
           <div className="max-w-80 grid gap-5">
