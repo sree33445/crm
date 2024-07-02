@@ -20,8 +20,11 @@ export default function Signup(){
            </RadioGroup>
            <br />
            <Select isRequired label='Nationality' placeholder='Select your country' className="max-w-xs">
-
+               <SelectItem value='india'>India</SelectItem>
+               <SelectItem value='usa'>USA</SelectItem>
+               <SelectItem value='uk'>UK</SelectItem>
            </Select>
+           <br />
            <br />
           <Input isRequired type="email" label='Email' placeholder='Enter your email' />
           <br />
