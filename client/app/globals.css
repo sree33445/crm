@@ -25,6 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.green-image {
+  filter: invert(28%) sepia(84%) saturate(432%) hue-rotate(60deg) brightness(100%) contrast(97%);
+}
+
 
 @layer utilities {
   .text-balance {
