@@ -31,7 +31,7 @@ export default function Admin(){
          }
     }
   return (
-    <div className={styles.container}>
+    <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400'>
         <form onSubmit={handleSubmit} className={styles.form}>
             <Input isRequired label='Name' type='text' placeholder='Enter name' value={name} onChange={(e)=>setName(e.target.value)} className='mb-10' />
             <br />
