@@ -20,7 +20,7 @@ export default function Login(){
         <form action="submit">
           <Input isRequired type="text" label='Name' placeholder='Enter your name' />
           <br />
-          <Input isRequired type="email" label='Email' placeholder='Enter your email' value={value} variant='bordered' isInvalid={isInvalid} color={isInvalid ? 'danger':'success'} errorMessage='Please enter a valid email' onValueChange={setValue} className='max-w-xs' />
+          <Input isRequired type="email" label='Email' placeholder='Enter your email' value={value}  isInvalid={isInvalid} color={isInvalid ? 'danger':'default'} errorMessage='Please enter a valid email' onValueChange={setValue} className='max-w-xs' />
           <br />
           <Input isRequired type="password" label='Password' placeholder='Enter your password' />
           <br />

@@ -4,6 +4,7 @@ import { Input } from '@nextui-org/input'
 import React from 'react'
 import { RadioGroup, Radio,Select,SelectItem} from '@nextui-org/react'
 import { Button } from '@nextui-org/button'
+import Link from 'next/link'
 
 
 export default function Signup(){
@@ -30,7 +31,7 @@ export default function Signup(){
           <br />
           <Input isRequired type="password" label='Password' placeholder='Enter your password' />
           <br />
-          <Button color='primary'>Signup</Button>
+          <Button as={Link} color='primary' href='/admin'>Signup</Button>
         </form>
     </div>
   )

@@ -8,7 +8,11 @@ export default function page(){
     <div>
       <Image src={tickmark} height={25} width={25} className='green-image' />
       <h1>Successfully Logged In...!!!</h1>
+<<<<<<< Updated upstream
       <Link href='/main' isBlock showAnchorIcon>Go to main page</Link>
+=======
+      <Link href='/admin' isBlock showAnchorIcon>Go to main page</Link>
+>>>>>>> Stashed changes
       </div>
   )
 }
