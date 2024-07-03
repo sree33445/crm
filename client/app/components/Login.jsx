@@ -4,24 +4,26 @@ import { Input } from "@nextui-org/input";
 import Link from "next/link";
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Login() {
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       </Head>
       <div className="bg-gradient-to-r from-[#F28383] from-10% via-[#9D6CD2] via-30% to-[#481EDC] to-90% flex items-center justify-center h-screen">
         <div className="max-w-[960px] bg-black-dark grid grid-cols-2 items-center gap-20 p-5 rounded-2xl">
           <div>
-            <img src="../assets/1.svg" alt="" />
-            <img src="../assets/2..svg" alt="" className="absolute top-36" />
+            <Image src="/assets/1.png" alt="b" width={300} height={300} />
+            <Image
+              src="/assets/2.png"
+              alt="a"
+              width={300}
+              height={400}
+              className="absolute top-56"
+            />
           </div>
 
           <div className="max-w-80 grid gap-5">
@@ -32,7 +34,8 @@ export default function Login() {
             <form action="" className="space-y-6 text-white">
               <div className="relative">
                 <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
-                  <i className="fa-solid fa-envelope-open"></i>
+                  {/* <i class="fa-solid fa-envelope-open"></i> */}
+                  <FontAwesomeIcon icon="fa-solid fa-envelope-open" />
                 </div>
                 <input
                   type="email"
@@ -42,7 +45,7 @@ export default function Login() {
               </div>
               <div className="relative">
                 <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
-                  <i className="fa-solid fa-lock"></i>
+                  <i class="fa-solid fa-lock"></i>
                 </div>
                 <input
                   type="password"
@@ -80,5 +83,3 @@ export default function Login() {
     </>
   );
 }
-
-

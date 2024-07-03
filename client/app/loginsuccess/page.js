@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 
-export default function page(){
+export default function page() {
   return (
-    <div>Successfully Logged In...!!!</div>
-  )
+    <div>
+      <loggedIn />
+      <h1>Successfully Logged In...!!!</h1>
+    </div>
+  );
 }
-

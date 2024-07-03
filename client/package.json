@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@nextui-org/button": "^2.0.34",
     "@nextui-org/dropdown": "^2.1.26",
     "@nextui-org/input": "^2.2.2",
