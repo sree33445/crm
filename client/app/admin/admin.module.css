@@ -1,0 +1,21 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: aqua;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+ 
+  
+  .button {
+    margin-top: 10px;
+  }
