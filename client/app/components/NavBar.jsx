@@ -13,7 +13,7 @@ import {
 
 const NavBar = () => {
   return (
-    <Navbar>
+    <Navbar className='bg-black'>
       <NavbarBrand>
         <p className="font-bold text-inherit">CRM</p>
       </NavbarBrand>

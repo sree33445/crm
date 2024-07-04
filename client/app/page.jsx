@@ -7,8 +7,8 @@ export default function Home() {
    <div>
     <NavBar />
     
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400">
+    {/* <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400"> */}
       </div>
-      </div>
+      // </div>
   );
 }
