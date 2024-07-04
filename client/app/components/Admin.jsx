@@ -3,14 +3,13 @@
 import React, { useState } from 'react'
 import { Input } from '@nextui-org/input'
 import { Select, SelectItem } from '@nextui-org/react'
-import {Button} from '@nextui-org/button'
+import { Button } from '@nextui-org/button'
 import Link from 'next/link'
-import styles from '../admin/admin.module.css'
 
 export default function Admin(){
-    const [name,setName] = useState('')
-    const [role,setRole] = useState('')
-    const [message,setMessage] = useState('')
+    const [name, setName] = useState('')
+    const [role, setRole] = useState('')
+    const [message, setMessage] = useState('')
 
     const handleSubmit = async(e) => {
          e.preventDefault();
@@ -30,21 +29,38 @@ export default function Admin(){
              setMessage(`Error: ${error.message}`);
          }
     }
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400">
-        <form onSubmit={handleSubmit} className={styles.form}>
-            <Input isRequired label='Name' type='text' placeholder='Enter name' value={name} onChange={(e)=>setName(e.target.value)} className='mb-10' />
-            <br />
-            <Select isRequired value={role} label='Role' onChange={(e)=>setRole(e.target.value)} placeholder='Choose the role' className=" mb-10">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-6 text-center text-indigo-700">Create User</h2>
+            <Input
+                isRequired
+                label='Name'
+                type='text'
+                placeholder='Enter name'
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
+                className='mb-4 p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500'
+            />
+            <Select
+                isRequired
+                value={role}
+                label='Role'
+                onChange={(e)=>setRole(e.target.value)}
+                placeholder='Choose the role'
+                className="mb-4 p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+            >
                 <SelectItem>Cash collector</SelectItem>
                 <SelectItem>Counselor</SelectItem>
                 <SelectItem>Manager</SelectItem>
             </Select>
-            <br />
-            <br />
-            <Button  color='primary'>Create User</Button>
+            <Button type="submit" color='primary' className='w-full py-2 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-600 transition duration-200'>
+                Create User
+            </Button>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="mt-4 text-center text-gray-700">{message}</p>}
     </div>
   )
 }
+

@@ -1,46 +1,63 @@
+
 'use client'
 
 import { Input } from '@nextui-org/input'
-import React, { useState } from 'react'
-import {Radio, RadioGroup, Select,SelectItem} from '@nextui-org/react'
+import React from 'react'
+import { RadioGroup, Radio, Select, SelectItem } from '@nextui-org/react'
 import { Button } from '@nextui-org/button'
 import Link from 'next/link'
 
 
-export default function Signup(){
-
-  const [gender,setGender] = useState("male")
-
- return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400">
-      {/* <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg max-w-md w-full"> */}
-      <div className="mb-4">
-        <form action="submit" className='w-full'>
-        <h1 className="text-2xl font-bold mb-4 color-success text-center">SignUp Page</h1>
-          <Input isRequired type="text" label='First Name' placeholder='Enter your first name' />
-          <br />
-          <Input isRequired type="text" label='Last Name' placeholder='Enter your last name' />
-           <br />
-           <RadioGroup label='Gender:' orientation='horizontal' value={gender} onChange={(e)=>setGender(e.target.value)}>
-                <Radio value="male">Male</Radio>
-                <Radio value="female">Female</Radio>
-           </RadioGroup>
-           <br />
-           <Select isRequired label='Nationality' placeholder='Select your country' className="max-w-xs">
-               <SelectItem value='india'>India</SelectItem>
-               <SelectItem value='usa'>USA</SelectItem>
-               <SelectItem value='uk'>UK</SelectItem>
-           </Select>
-           <br />
-           <br />
-          <Input isRequired type="email" label='Email' placeholder='Enter your email' />
-          <br />
-          <Input isRequired type="password" label='Password' placeholder='Enter your password' />
-          <br />
-          <Button as={Link} color='primary' href='/admin'>Signup</Button>
-        </form>
-        </div>
-        {/* </div> */}
+export default function Signup() {
+  return (
+    <div className="flex w-full justify-center flex-wrap md:flex-nowrap gap-4 p-12 bg-gray-200">
+      <form action="submit" className="w-full max-w-md p-8 bg-gray-100 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-6 text-center text-indigo-600">Signup</h2>
+        <Input
+          isRequired
+          type="text"
+          label="First Name"
+          placeholder="Enter your first name"
+          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
+        />
+        <Input
+          isRequired
+          type="text"
+          label="Last Name"
+          placeholder="Enter your last name"
+          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
+        />
+        <RadioGroup label="Gender:" orientation="horizontal" className="mb-4">
+          <Radio value="male">Male</Radio>
+          <Radio value="female">Female</Radio>
+        </RadioGroup>
+        <Select
+          isRequired
+          label="Nationality"
+          placeholder="Select your country"
+          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
+        >
+          <SelectItem value="usa">India</SelectItem>
+          <SelectItem value="canada">Canada</SelectItem>
+          <SelectItem value="uk">UK</SelectItem>
+          <SelectItem value="australia">Australia</SelectItem>
+        </Select>
+        <Input
+          isRequired
+          type="email"
+          label="Email"
+          placeholder="Enter your email"
+          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
+        />
+        <Input
+          isRequired
+          type="password"
+          label="Password"
+          placeholder="Enter your password"
+          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
+        />
+        <Button color="primary" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg">Signup</Button>
+      </form>
     </div>
   )
 }
