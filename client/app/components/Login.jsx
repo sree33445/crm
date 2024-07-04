@@ -1,85 +1,37 @@
-"use client";
-import { Button } from "@nextui-org/button";
-import { Input } from "@nextui-org/input";
-import Link from "next/link";
-import React from "react";
-import Head from "next/head";
-import Image from "next/image";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+'use client';
+import { Button } from '@nextui-org/button'
+import { Input } from '@nextui-org/input'
+import Link from 'next/link';
+import React from 'react'
 
-export default function Login() {
+export default function Login(){
+
+  const [value, setValue] = React.useState("");
+  const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+
+  const isInvalid = React.useMemo(() => {
+    if (value === "") return false;
+
+    return validateEmail(value) ? false : true;
+  }, [value]);
+
   return (
-    <>
-      <Head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      </Head>
-      <div className="bg-gradient-to-r from-[#F28383] from-10% via-[#9D6CD2] via-30% to-[#481EDC] to-90% flex items-center justify-center h-screen">
-        <div className="max-w-[960px] bg-black-dark grid grid-cols-2 items-center gap-20 p-5 rounded-2xl">
-          <div>
-            <Image src="/assets/1.png" alt="b" width={300} height={300} />
-            <Image
-              src="/assets/2.png"
-              alt="a"
-              width={300}
-              height={400}
-              className="absolute top-56"
-            />
-          </div>
-
-          <div className="max-w-80 grid gap-5">
-            <h1 className="text-5xl font-bold text-white">Login</h1>
-            <p className="text-dull-white">
-              Access to 300+ hours of courses, tutorials, and livestreams
-            </p>
-            <form action="" className="space-y-6 text-white">
-              <div className="relative">
-                <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
-                  {/* <i class="fa-solid fa-envelope-open"></i> */}
-                  <FontAwesomeIcon icon="fa-solid fa-envelope-open" />
-                </div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-80 bg-white-light py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg"
-                />
-              </div>
-              <div className="relative">
-                <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
-                  <i class="fa-solid fa-lock"></i>
-                </div>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="w-80 bg-white-light py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg"
-                />
-              </div>
-              <button className="bg-gradient-to-r from-blue-400 to-cyan-200 w-80 font-semibold rounded-full py-2">
-                Sign in
-              </button>
-            </form>
-            <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-              <p>
-                Don't have an account?{" "}
-                <a className="text-neon-blue font-semibold cursor-pointer">
-                  Sign up
-                </a>
-              </p>
-              <p>
-                Forgot password?{" "}
-                <a className="text-neon-blue font-semibold cursor-pointer">
-                  Reset password
-                </a>
-              </p>
-              <p>
-                Don't have a password yet?{" "}
-                <a className="text-neon-blue font-semibold cursor-pointer">
-                  Set password
-                </a>
-              </p>
-            </div>
-          </div>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-blue-400">
+      {/* <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg max-w-md w-full"> */}
+        <div className="mb-4">
+        <form action="submit" className='w-full'>
+          <h1 className="text-2xl font-bold mb-4 color-success text-center">Login Page</h1>
+          <Input isRequired type="text" label='Name' placeholder='Enter your name' />
+          <br />
+          <Input isRequired type="email" label='Email' placeholder='Enter your email' value={value}  isInvalid={isInvalid} color={isInvalid ? 'danger':'default'} errorMessage='Please enter a valid email' onValueChange={setValue} className='max-w-xs' />
+          <br />
+          <Input isRequired type="password" label='Password' placeholder='Enter your password' />
+          <br />
+          <Button as={Link} color='primary' href='/loginsuccess'>Login</Button>
+        </form>
         </div>
-      </div>
-    </>
-  );
+        {/* </div> */}
+    </div>
+  )
 }
+
