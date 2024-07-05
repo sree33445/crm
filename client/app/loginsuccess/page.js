@@ -7,7 +7,7 @@ export default function page(){
   return (
     <div>
       <Image src={tickmark} height={25} width={25} className='green-image' />
-      <h1>Successfully Logged In...!!!</h1>
+      <h1 className=' mx-10'>Successfully Logged In...!!!</h1>
       <Link href='/admin' isBlock showAnchorIcon>Go to main page</Link>
       </div>
   )
