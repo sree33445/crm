@@ -1,10 +1,12 @@
 'use client'
+import Link from 'next/link'
 import React from 'react'
+import { Button } from '@nextui-org/button'
 
 const Contacts = () => {
   return (
-<div className='flex items-center justify-center min-h-screen'>    
-<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className=''>
+<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex items-center justify-center ">
     <div class="flex justify-end px-4 pt-4">
         <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
             <span class="sr-only">Open dropdown</span>
@@ -36,6 +38,7 @@ const Contacts = () => {
         </div>
     </div>
 </div>
+ <Button as={Link} href='/admin' >Add new user</Button>
 </div>
   )
 }
