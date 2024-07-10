@@ -27,6 +27,12 @@ export default function Signup() {
           placeholder="Enter your last name"
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
+        <Select isRequired label="Role" placeholder='Select the role' orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
+          <SelectItem value="admin">Admin</SelectItem>
+          <SelectItem value="superadmin">Super Admin</SelectItem>
+          <SelectItem value="client">Client</SelectItem>
+          <SelectItem value="organization">Organization</SelectItem>
+        </Select>
         <Select isRequired label="Gender" placeholder='Select your gender' orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
           <SelectItem value="male">Male</SelectItem>
           <SelectItem value="female">Female</SelectItem>
@@ -37,7 +43,7 @@ export default function Signup() {
           placeholder="Select your country"
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         >
-          <SelectItem value="usa">India</SelectItem>
+          <SelectItem value="india">India</SelectItem>
           <SelectItem value="canada">Canada</SelectItem>
           <SelectItem value="uk">UK</SelectItem>
           <SelectItem value="australia">Australia</SelectItem>

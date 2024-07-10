@@ -1,4 +1,4 @@
-import { usersDB } from "@/app/lib/db/page"
+import { usersDB } from "../../lib/db"
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
