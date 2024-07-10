@@ -27,10 +27,10 @@ export default function Signup() {
           placeholder="Enter your last name"
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
-        <RadioGroup label="Gender:" orientation="horizontal" className="mb-4">
-          <Radio value="male">Male</Radio>
-          <Radio value="female">Female</Radio>
-        </RadioGroup>
+        <Select isRequired label="Gender" placeholder='Select your gender' orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
+          <SelectItem value="male">Male</SelectItem>
+          <SelectItem value="female">Female</SelectItem>
+        </Select>
         <Select
           isRequired
           label="Nationality"
