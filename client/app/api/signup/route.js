@@ -1,19 +1,17 @@
 import { usersDB } from "@/app/lib/db/page";
 
-export default async function handler(req, res) {
-    if (req.method === 'POST') {
-      try {
-        const db = await connectToDatabase()
-        const collection = db.collection('users')
-        
-        const result = await collection.insertOne(req.body)
-        
-        res.status(201).json({ message: 'User created successfully', userId: result.insertedId })
-      } catch (error) {
-        res.status(500).json({ message: 'Error creating user', error: error.message })
-      }
-    } else {
-      res.setHeader('Allow', ['POST'])
-      res.status(405).end(`Method ${req.method} Not Allowed`)
-    }
+import { NextResponse } from 'next/server'
+
+export async function POST(req) {
+  try {
+    const body = await req.json()
+    const db = await usersDB()
+    const collection = db.collection('users')
+    
+    const result = await collection.insertOne(body)
+    
+    return NextResponse.json({ message: 'User created successfully', userId: result.insertedId, role: body.role }, { status: 201 })
+  } catch (error) {
+    return NextResponse.json({ message: 'Error creating user', error: error.message }, { status: 500 })
   }
+}

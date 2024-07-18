@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Input } from '@nextui-org/input'
-import { Select, SelectItem } from '@nextui-org/react'
 import { Button } from '@nextui-org/button'
-import Link from 'next/link'
+import { Input } from '@nextui-org/input'
+import { Select, SelectItem } from '@nextui-org/select'
+import React, { useState } from 'react'
 
-export default function Admin(){
+export default function SuperAdmin(){
     const [name, setName] = useState('')
     const [role, setRole] = useState('')
     const [message, setMessage] = useState('')
@@ -29,6 +28,7 @@ export default function Admin(){
              setMessage(`Error: ${error.message}`);
          }
     }
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -54,18 +54,16 @@ export default function Admin(){
                 <SelectItem>Cash collector</SelectItem>
                 <SelectItem>Counselor</SelectItem>
                 <SelectItem>Manager</SelectItem>
+                <SelectItem>Admin</SelectItem>
             </Select>
             <Button type="submit" color='primary' className='w-full py-2 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-600 transition duration-200'>
                 Create User
             </Button>
-            <div className="text-center">
-            <Link href="/invite-user" className="text-indigo-700 hover:underline">
-              Invite user
-            </Link>
-          </div>
         </form>
         {message && <p className="mt-4 text-center text-gray-700">{message}</p>}
     </div>
   )
 }
+
+
 
