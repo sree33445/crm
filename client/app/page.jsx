@@ -24,7 +24,7 @@ export default function Home() {
         <SidebarItem icon={<HomeIcon size={20} />} text="Home" active />
         <SidebarItem icon={<Contact2 size={20} />} text="Contacts" href='/contact' />
         <SidebarItem icon={<Heart size={20} />} text="Service" />
-        <SidebarItem icon={<Package size={20} />} text="Team" alert />
+        <SidebarItem icon={<Package size={20} />} text="Team" href="/team" />
         <SidebarItem icon={<Receipt size={20} />} text="Billings" />
         <SidebarItem icon={<Settings size={20} />} text="settings" />
         <SidebarItem icon={<LifeBuoy size={20} />} text="Help" />
