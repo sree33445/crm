@@ -22,6 +22,12 @@ export default function Signup() {
     'password': ''
   })
 
+  const roleName = ['admin', 'superadmin', 'parties', 'organization']
+
+  const genderName = ['male', 'female']
+
+  const nationName = ['india', 'canada', 'uk', 'australia']
+
   const handleInputChange = (e) =>{
     const {name,value} = e.target
     setFormData(prevData =>({
@@ -57,14 +63,13 @@ export default function Signup() {
     }
   }
 
-  // const role = ['admin', 'superadmin', 'parties', 'organization']
 
   // if (role == 'superadmin') {
   //   return redirect('/superadmin')
   // }
   return (
     <div className="flex w-full justify-center flex-wrap md:flex-nowrap gap-4 p-12 bg-gray-200">
-      <form action="submit" onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-gray-100 rounded-lg shadow-lg">
+      <form  onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-gray-100 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-indigo-600">Signup</h2>
         <Input
           isRequired
@@ -85,14 +90,16 @@ export default function Signup() {
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
         <Select isRequired label="Role" placeholder='Select the role' name='role' onChange={handleInputChange} orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
-          <SelectItem value='admin'>Admin</SelectItem>
-          <SelectItem value='superadmin'>Super Admin</SelectItem>
-          <SelectItem value='parties'>Parties</SelectItem>
-          <SelectItem value='organization'>Organization</SelectItem>
+        {roleName.map((role) => (
+    <SelectItem key={role} value={role}>
+      {role.charAt(0).toUpperCase() + role.slice(1)}
+    </SelectItem>
+  ))}
         </Select>
         <Select isRequired label="Gender" placeholder='Select your gender' name='gender' onChange={handleInputChange} orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
-          <SelectItem value="male">Male</SelectItem>
-          <SelectItem value="female">Female</SelectItem>
+          {genderName.map((gender)=>(
+            <SelectItem  key={gender} value={gender}> {gender.charAt(0).toUpperCase() + gender.slice(1)}</SelectItem>
+          ))}
         </Select>
         <Select
           isRequired
@@ -102,10 +109,9 @@ export default function Signup() {
           onChange={handleInputChange}
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         >
-          <SelectItem value="india">India</SelectItem>
-          <SelectItem value="canada">Canada</SelectItem>
-          <SelectItem value="uk">UK</SelectItem>
-          <SelectItem value="australia">Australia</SelectItem>
+         {nationName.map((nationality)=>(
+          <SelectItem key={nationality} value={nationality}>{nationality.charAt(0).toUpperCase() + nationality.slice(1)}</SelectItem>
+         ))}
         </Select>
         <Input
           isRequired
@@ -125,7 +131,7 @@ export default function Signup() {
           onChange={handleInputChange}
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
-        <Button color="primary" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg">Signup</Button>
+        <Button type='submit' color="primary" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg">Signup</Button>
       </form>
     </div>
   )

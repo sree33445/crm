@@ -4,11 +4,15 @@ import React, { useState } from 'react'
 import { Input, Textarea } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
 import { redirect } from 'next/navigation'
+import { Select, SelectItem } from '@nextui-org/select'
 
 export default function Invite(){
 
     const [email,SetEmail] = useState('')
+    const [role,setRole] = useState('')
     const [message,setMessage] = useState('')
+
+    const rolevalue = ['cash collector', 'counselor', 'manager']
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -18,10 +22,11 @@ export default function Invite(){
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email,message})
+                body: JSON.stringify({email,role,message})
             })
             if (response.ok) {
                 SetEmail('')
+                setRole('')
                 setMessage('')
                 alert('Invitation sent successfully');
                 return window.location.href='/'
@@ -40,6 +45,18 @@ export default function Invite(){
         <h1 className='text-2xl font-bold mb-6 text-center text-indigo-700'>Invite User</h1>
 
             <Input isRequired label='Email' type='email' value={email} onChange={(e)=>SetEmail(e.target.value)} placeholder='Enter email' className='mb-4 p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500' />
+            <Select
+                isRequired
+                value={role}
+                label='Role'
+                onChange={(e)=>setRole(e.target.value)}
+                placeholder='Choose the role'
+                className="mb-4 p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+            >
+               {rolevalue.map((role)=>(
+                <SelectItem key={role} value={role} >{role.charAt(0).toUpperCase() + role.slice(1)}</SelectItem>
+               ))}
+            </Select>
             <Textarea label='Message' type='text' value={message} onChange={(e)=>setMessage(e.target.value)} placeholder='Enter message' className='mb-4 p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500' />
             <Button type="submit" color='primary' className='w-full py-2 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-600 transition duration-200'>
                 Invite User

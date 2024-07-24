@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export async function POST(req) {
-  const { email,message } = await req.json();
+  const { email,role,message } = await req.json();
 
   let transporter = nodemailer.createTransport({
     host: 'smtp.sendgrid.net',
@@ -17,7 +17,7 @@ export async function POST(req) {
     let info = await transporter.sendMail({
       from: process.env.FROM_EMAIL,
       to: email,
-      subject: 'Invitation to Join',
+      subject: 'Invitation to Join as ' + role,
       text: message,
     });
 
