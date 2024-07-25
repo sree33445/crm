@@ -21,5 +21,6 @@ export default function handler(req, res) {
     res.setHeader('Allow', ['POST']);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
+
 }
 
