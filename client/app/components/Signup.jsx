@@ -13,8 +13,7 @@ export default function Signup() {
 
   // const router = useRouter()
   const [formData,setFormData] = useState({
-    'firstName': '',
-    'lastName': '',
+    'name': '',
     'role': '',
     'gender': '',
     'nationality': '',
@@ -74,21 +73,13 @@ export default function Signup() {
         <Input
           isRequired
           type="text"
-          label="First Name"
-          name='firstName'
-          placeholder="Enter your first name"
+          label="Name"
+          name='name'
+          placeholder="Enter your name"
           onChange={handleInputChange}
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
-        <Input
-          isRequired
-          type="text"
-          label="Last Name"
-          name='lastName'
-          placeholder="Enter your last name"
-          onChange={handleInputChange}
-          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
-        />
+        
         <Select isRequired label="Role" placeholder='Select the role' name='role' onChange={handleInputChange} orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
         {roleName.map((role) => (
     <SelectItem key={role} value={role}>
