@@ -94,6 +94,11 @@ export default function Admin() {
                 <Button type="submit" color='primary' className='w-full py-2 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-600 transition duration-200'>
                     Create User
                 </Button>
+                <div className="text-center">
+            <Link href="/invite-user" className="text-indigo-700 hover:underline">
+              Invite user
+            </Link>
+          </div>
             </form>
             {message && <p className="mt-4 text-center text-gray-700">{message}</p>}
         </div>
