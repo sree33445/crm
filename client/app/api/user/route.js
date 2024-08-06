@@ -8,7 +8,6 @@ export default function handler(req, res) {
       return res.status(400).json({ message: 'Name and role are required' });
     }
 
-    // Simple validation for role
     const validRoles = ['cash collector', 'counselor', 'manager'];
     if (!validRoles.includes(role)) {
       return res.status(400).json({ message: 'Invalid role' });
