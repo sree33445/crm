@@ -1,15 +1,15 @@
-import { Link} from '@nextui-org/react'
-import Image from 'next/image'
+'use client'
+import { Link } from '@nextui-org/react'
 import React from 'react'
-import tickmark from '../Asset/tick-mark.1024x890.png'
+import Lottie from 'lottie-react'
+import animationData from '../Asset/Animation - 1723048901549.json'
 
-export default function page(){
+export default function Page() {
   return (
-    <div>
-      <Image src={tickmark} height={30} width={30} className='green-image' />
-      <h1 className=' mx-10'>Successfully Logged In...!!!</h1>
+    <div className='flex flex-col items-center justify-center min-h-screen'>
+      <Lottie animationData={animationData} className='h-[200px] w-[200px]'  />
+      <h1 className='mx-10'>Successfully Logged In...!!!</h1>
       <Link href='/' isBlock showAnchorIcon>Go to main page</Link>
-      </div>
+    </div>
   )
 }
-
