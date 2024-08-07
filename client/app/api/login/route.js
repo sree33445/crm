@@ -7,7 +7,6 @@ export async function POST(request) {
     const db = await usersDB();
     const collection = db.collection('users');
     
-    // Find the user
     const user = await collection.findOne({ name, email, password });
     
     if (user) {

@@ -1,9 +1,14 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@nextui-org/button'
 
 const Contacts = () => {
+
+  const [name,setName] = useState('')
+  const [role,setRole] = useState('')
+
+  
   return (
     <div className='flex flex-col items-center justify-center min-h-screen p-4'>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
