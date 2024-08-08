@@ -6,6 +6,8 @@ import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { SlOptionsVertical } from "react-icons/sl";
+import { IoPersonOutline } from "react-icons/io5";
+import { IoIosNotifications } from "react-icons/io";
 
 const NavBar = () => {
   const [name, setName] = useState("");
@@ -29,11 +31,9 @@ const NavBar = () => {
         <h1 className="font-bold text-white">CRM</h1>
       </div>
 
-      <div className="flex p-3 relative items-center">
-        <img
-          src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
-          alt=""
-          className="w-10 h-10 rounded-md"
+      <div className="flex p-3 relative items-center bg-gray-400 rounded-2xl">
+        <IoPersonOutline color="white"
+          className="w-5 h-5 rounded-md"
         />
         <div
           className={`
@@ -42,15 +42,17 @@ const NavBar = () => {
         `}
         >
           <div className="leading-4">
-            <h4 className="font-semibold text-white">John Doe</h4>
+            <h4 className="text-xs text-white">John Doe</h4>
             <span className="text-xs text-white">johndoe@gmail.com</span>
           </div>
+<IoIosNotifications color="white" />
 
           <SlOptionsVertical
             color="white"
             onClick={toggleDropdown}
             className="cursor-pointer"
           />
+          
         </div>
 
         {dropdownVisible && (
@@ -83,9 +85,11 @@ const NavBar = () => {
             </ul>
           </div>
         )}
+        
       </div>
+      
 
-      <div className="md:hidden">
+      {/* <div className="md:hidden">
         <button onClick={toggleMenu} className="text-white">
           {isMenuOpen ? <IoMdClose size={28} /> : <MdMenu size={25} />}
         </button>
@@ -112,8 +116,10 @@ const NavBar = () => {
             Signup
           </Button>
         </div>
-      )}
+      )} */}
+      
     </div>
+    
   );
 };
 
