@@ -16,16 +16,14 @@ export default function Signup() {
     'name': '',
     'role': '',
     'gender': '',
-    'nationality': '',
     'email': '',
     'password': ''
   })
 
-  const roleName = ['admin', 'superadmin', 'parties', 'organization']
+  const roleName = ['admin', 'superadmin', 'user']
 
   const genderName = ['male', 'female']
 
-  const nationName = ['india', 'canada', 'uk', 'australia']
 
   const handleInputChange = (e) =>{
     const {name,value} = e.target
@@ -92,18 +90,7 @@ export default function Signup() {
             <SelectItem  key={gender} value={gender}> {gender.charAt(0).toUpperCase() + gender.slice(1)}</SelectItem>
           ))}
         </Select>
-        <Select
-          isRequired
-          label="Nationality"
-          placeholder="Select your country"
-          name='nationality'
-          onChange={handleInputChange}
-          className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
-        >
-         {nationName.map((nationality)=>(
-          <SelectItem key={nationality} value={nationality}>{nationality.charAt(0).toUpperCase() + nationality.slice(1)}</SelectItem>
-         ))}
-        </Select>
+        
         <Input
           isRequired
           type="email"

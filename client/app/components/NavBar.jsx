@@ -107,7 +107,6 @@ const NavBar = () => {
             className="w-4 h-4 md:w-5 md:h-5"
           />
           <div className="leading-tight">
-            <h2 className="text-xs md:text-sm text-black font-semibold">John Doe</h2>
             <span className="text-xs text-black">johndoe@gmail.com</span>
           </div>
         </div>
