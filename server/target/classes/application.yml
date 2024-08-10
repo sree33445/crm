@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: CRM
+  data:
+    mongodb:
+      uri: mongodb+srv://alwin:root@cluster0.ltavrxh.mongodb.net/?retryWrites=true&w=majority
+      database: CRM_DB
+  jackson:
+    default-property-inclusion: NON_NULL
+
+server:
+  port: 8081
+

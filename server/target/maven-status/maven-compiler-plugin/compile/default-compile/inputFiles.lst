@@ -1,0 +1,16 @@
+/home/alwin/Downloads/crm/src/main/java/com/crm/CrmApplication.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/config/SecurityConfig.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/controller/Login_SignUpRController.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/dto/LoginDto.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/dto/SignUpDto.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/entity/Admin.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/entity/Login_SignUp.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/entity/SuperAdmin.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/entity/User.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/repository/AdminRepository.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/repository/Login_SignUpRepository.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/repository/SuperAdminRepository.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/repository/UserRepository.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/responce/Login_SignUpResponse.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/service/Login_SignUpService.java
+/home/alwin/Downloads/crm/src/main/java/com/crm/service/impl/Login_SignUpIMPL.java
