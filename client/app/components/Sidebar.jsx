@@ -10,10 +10,10 @@ export default function Sidebar({ children }) {
   
   return (
     <aside className="h-screen">
-      <nav className="h-full inline-flex  flex-col bg-neutral-800 border-r shadow-sm">
+      <nav className="h-full inline-flex  flex-col bg-gray-800 border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <img
-            src="https://gist.githubusercontent.com/MsJoitson/9afc5501022de51282446370b5f7b199/raw/1fa7091487a0be1fcfd7e820e7faea9e4b19c098/logo.svg"
+            src=""
             className={`overflow-hidden transition-all ${
               expanded ? "w-12 ml-3" : "w-0 h-0"
             }`}
@@ -31,25 +31,7 @@ export default function Sidebar({ children }) {
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
 
-        <div className="border-t flex p-3">
-          <img
-            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
-            alt=""
-            className="w-10 h-10 rounded-md"
-          />
-          <div
-            className={`
-              flex justify-between items-center
-              overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
-          `}
-          >
-            <div className="leading-4">
-              <h4 className="font-semibold">John Doe</h4>
-              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
-            </div>
-            <MoreVertical size={20} />
-          </div>
-        </div>
+        
       </nav>
     </aside>
   )
@@ -67,7 +49,7 @@ export function SidebarItem({ icon, text, active, alert, href }) {
         ${
           active
             ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-            : "hover:bg-indigo-50 text-gray-600"
+            : "hover:bg-indigo-50 text-gray-400"
         }
     `}
     >
