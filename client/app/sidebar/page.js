@@ -26,20 +26,20 @@
 //   return <Sidebar />;
 // }
 // components/Sidebar.js
-import React from "react";
-import PropTypes from "prop-types";
+// import React from "react";
+// import PropTypes from "prop-types";
 
-const Sidebar = ({ children }) => {
-  return (
-    <div className="w-20 bg-blue-900 text-white flex flex-col items-center">
-      {children}
-    </div>
-  );
-};
+// const Sidebar = ({ children }) => {
+//   return (
+//     <div className="w-20 bg-blue-900 text-white flex flex-col items-center">
+//       {children}
+//     </div>
+//   );
+// };
 
-Sidebar.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+// Sidebar.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
 
-export default Sidebar;
-export { SidebarItem }; // Optional, if you want to import SidebarItem from this file
+// export default Sidebar;
+// export { SidebarItem }; // Optional, if you want to import SidebarItem from this file
