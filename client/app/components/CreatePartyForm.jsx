@@ -42,9 +42,9 @@ const CreatePartyForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-4 border rounded">
-      <h2 className="text-2xl mb-4">Create Party</h2>
-      <div className="mb-4">
+    <div className="flex w-full justify-center flex-wrap md:flex-nowrap gap-4 p-12 bg-gray-200">
+    <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-gray-100 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-6 text-center text-indigo-600">Create Party</h2>
       <Input
           isRequired
           type="text"
@@ -54,8 +54,6 @@ const CreatePartyForm = () => {
           onChange={(e)=>setName(e.target.value)}
           className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl"
         />
-      </div>
-      <div className="mb-4">
       <Select isRequired label="Type" placeholder='Select the type' name='type' onChange={(e)=>setType(e.target.value)} orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
         {typeName.map((type) => (
     <SelectItem key={type} value={type}>
@@ -63,8 +61,6 @@ const CreatePartyForm = () => {
     </SelectItem>
   ))}
         </Select>
-      </div>
-      <div className="mb-4">
       <Select isRequired label="Role" placeholder='Select the role' name='role' onChange={(e)=>setRoles(e.target.value)} orientation="horizontal" className="mb-4 border border-blue-400 focus:border-indigo-600 rounded-xl">
         {roleName.map((role) => (
     <SelectItem key={role} value={role}>
@@ -72,8 +68,7 @@ const CreatePartyForm = () => {
     </SelectItem>
   ))}
         </Select>
-      </div>
-      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
+      <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg">
         Create Party
       </button>
       {message && (
@@ -87,6 +82,8 @@ const CreatePartyForm = () => {
     
       )}
     </form>
+    </div>
+
   );
 };
 export default CreatePartyForm;
