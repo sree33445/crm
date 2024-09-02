@@ -48,7 +48,7 @@ export default function Signup() {
         console.log('Signup successfull');
 
         if(formData.role === 'superadmin'){
-          window.location.href='/superadmin'
+          window.location.href='/party'
         } else {
           window.location.href='/'
         }
